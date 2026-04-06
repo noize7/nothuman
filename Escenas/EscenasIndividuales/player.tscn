@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://chxlif33oaaiq"]
+
+[ext_resource type="Script" uid="uid://d8cn1jok7oy2" path="res://Scripts/player.gd" id="1_nairf"]
+[ext_resource type="Texture2D" uid="uid://byj3lna8msiqf" path="res://Assets/Texturas/projector.png" id="2_58h11"]
+[ext_resource type="Shader" uid="uid://c01ndxsbijwwr" path="res://Shaders/vhs.gdshader" id="2_xcui4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dh3jt"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_nairf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58h11"]
+shader = ExtResource("2_xcui4")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
+
+[node name="Player" type="CharacterBody3D" unique_id=572624633]
+script = ExtResource("1_nairf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=963648589]
+shape = SubResource("CapsuleShape3D_dh3jt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=922729871]
+visible = false
+mesh = SubResource("CapsuleMesh_nairf")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=27285375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7228222, -0.45079017)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=2018830738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18525743, -0.14471531, -0.2343328)
+light_projector = ExtResource("2_58h11")
+shadow_enabled = true
+spot_range = 10.098
+spot_angle = 32.33
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1175005662]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=831500000]
+material = SubResource("ShaderMaterial_58h11")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

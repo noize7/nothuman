@@ -1,20 +1,27 @@
 [gd_scene format=3 uid="uid://n868i6igpdqn"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxfe7"]
-albedo_color = Color(0.41215247, 0.41215247, 0.41215247, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wghqs"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_c4fwp"]
-material = SubResource("StandardMaterial3D_mxfe7")
+[sub_resource type="Sky" id="Sky_lpdde"]
+sky_material = SubResource("ProceduralSkyMaterial_wghqs")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wghqs"]
+[sub_resource type="Environment" id="Environment_sgo8e"]
+background_mode = 2
+sky = SubResource("Sky_lpdde")
+tonemap_mode = 2
+tonemap_agx_white = 16.5
+tonemap_agx_contrast = 1.32
+sdfgi_enabled = true
+sdfgi_read_sky_light = false
+glow_enabled = true
+glow_bloom = 1.0
+adjustment_enabled = true
+adjustment_contrast = 1.15
+adjustment_saturation = 1.3
 
 [node name="MapaPruebas" type="Node3D" unique_id=2051688508]
 
-[node name="PisoPruebas" type="StaticBody3D" parent="." unique_id=1972946402]
-transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 25, 0, 0, 0)
-
-[node name="Mesh" type="MeshInstance3D" parent="PisoPruebas" unique_id=501181843]
-mesh = SubResource("BoxMesh_c4fwp")
-
-[node name="Colision" type="CollisionShape3D" parent="PisoPruebas" unique_id=1698720999]
-shape = SubResource("BoxShape3D_wghqs")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=178515031]
+environment = SubResource("Environment_sgo8e")
