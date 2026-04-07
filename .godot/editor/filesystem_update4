@@ -1,5 +1,6 @@
+res://Shaders/vhs.gdshader
+res://Escenas/EscenasIndividuales/police_office.tscn
 res://Escenas/mapa_pruebas.tscn
-res://Escenas/EscenasIndividuales/police_office_3.tscn
+res://Escenas/EscenasIndividuales/PoliceOffice.tscn
 res://Escenas/EscenasIndividuales/player.tscn
 res://Scripts/player.gd
-res://Shaders/vhs.gdshader

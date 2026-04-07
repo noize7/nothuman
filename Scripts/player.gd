@@ -27,9 +27,15 @@ const FLASHLIGHT_SWAY = 0.02
 var flashlight_rot := Vector2.ZERO
 var flashlight_target := Vector2.ZERO
 
+# Ray Cast
+@onready var raycast = $Camera3D/RayCast
+@onready var air: ColorRect = $Canvas/Air
+var objeto_actual = null
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	base_cam_y = camera.position.y  # 👈 guardamos altura original
+	air.pivot_offset = air.size / 2
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -43,6 +49,10 @@ func _input(event):
 		flashlight_target.y = -event.relative.y * FLASHLIGHT_SWAY
 	if event.is_action_pressed("cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	#Interactua con objetos
+	if event.is_action_pressed("interact") and objeto_actual:
+		abrir_puerta(objeto_actual)
 
 
 func _physics_process(delta: float) -> void:
@@ -115,3 +125,48 @@ func _physics_process(delta: float) -> void:
 	var noise = sin(Time.get_ticks_msec() * 0.01) * 0.003
 	spot_light_3d.rotation.x += noise
 	spot_light_3d.rotation.y += noise * 0.5
+	
+	
+	# =========================
+	# RAYCAST INTERACCIÓN
+	# =========================
+
+	var encontrado = null
+
+	if raycast.is_colliding():
+		var obj = raycast.get_collider()
+
+		while obj:
+			if obj.is_in_group("puertas"):
+				encontrado = obj
+				break
+			obj = obj.get_parent()
+
+	# Guardamos resultado final
+	objeto_actual = encontrado
+
+	# UI
+	var target_scale = Vector2.ONE
+
+	if objeto_actual:
+		var pulse = sin(Time.get_ticks_msec() * 0.01) * 0.05
+		target_scale = Vector2(1.3 + pulse, 1.3 + pulse)
+
+	# Suavizado
+	air.scale = air.scale.lerp(target_scale, delta * 8.0)
+func abrir_puerta(puerta):
+	var abierta = false
+
+	if puerta.has_meta("abierta"):
+		abierta = puerta.get_meta("abierta")
+
+	var tween = create_tween()
+
+	if abierta:
+		# CERRAR
+		tween.tween_property(puerta, "rotation_degrees:y", 0, 0.4)
+		puerta.set_meta("abierta", false)
+	else:
+		# ABRIR
+		tween.tween_property(puerta, "rotation_degrees:y", 90, 0.4)
+		puerta.set_meta("abierta", true)

@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://n868i6igpdqn"]
 
+[ext_resource type="PackedScene" uid="uid://c0dqicu7kgrmv" path="res://Escenas/EscenasIndividuales/PoliceOffice.tscn" id="1_wghqs"]
+[ext_resource type="PackedScene" uid="uid://chxlif33oaaiq" path="res://Escenas/EscenasIndividuales/player.tscn" id="2_wghqs"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wghqs"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,3 +28,8 @@ adjustment_saturation = 1.3
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=178515031]
 environment = SubResource("Environment_sgo8e")
+
+[node name="PoliceOffice5" parent="." unique_id=181732080 instance=ExtResource("1_wghqs")]
+
+[node name="Player" parent="." unique_id=572624633 instance=ExtResource("2_wghqs")]
+transform = Transform3D(0.77, 0, 0, 0, 0.77, 0, 0, 0, 0.77, 0, 0.91191995, 0)
