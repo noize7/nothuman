@@ -10,10 +10,16 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_58h11"]
 shader = ExtResource("2_xcui4")
-shader_parameter/wiggle = 0.03
-shader_parameter/wiggle_speed = 25.0
-shader_parameter/smear = 1.0
-shader_parameter/blur_samples = 15
+shader_parameter/pixel_resolution = 240.0
+shader_parameter/color_steps = 16
+shader_parameter/noise_strength = 0.1
+shader_parameter/enable_dither = true
+shader_parameter/dither_strength = 0.3
+shader_parameter/enable_glow = true
+shader_parameter/glow_strength = 0.4
+shader_parameter/glow_spread = 0.005
+shader_parameter/enable_vintage = true
+shader_parameter/vintage_strength = 0.8
 
 [node name="Player" type="CharacterBody3D" unique_id=572624633]
 script = ExtResource("1_nairf")

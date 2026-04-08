@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://crww3vh15ulod"]
+
+[ext_resource type="Texture2D" uid="uid://crgmuulnpub3u" path="res://Assets/Texturas/background2.png" id="1_4kpvm"]
+[ext_resource type="Texture2D" uid="uid://5kgl2wfsox4q" path="res://Assets/Texturas/icons/trashicon2.png" id="2_hq06j"]
+[ext_resource type="Texture2D" uid="uid://cshmtdw3ttnag" path="res://Assets/Texturas/icons/trashicon2_hover.png" id="3_eibch"]
+[ext_resource type="FontFile" uid="uid://dvh6nlca63mch" path="res://Assets/Fuentes/Bitter-Medium.ttf" id="4_mhumt"]
+[ext_resource type="Texture2D" uid="uid://c2orsr5dccdg8" path="res://Assets/Texturas/icons/foldericon.png" id="5_3gxl1"]
+[ext_resource type="Texture2D" uid="uid://cjjk4hkhiqfgr" path="res://Assets/Texturas/icons/foldericon_hover.png" id="6_37nxy"]
+[ext_resource type="Texture2D" uid="uid://wckrex0sscat" path="res://Assets/Texturas/icons/imageicon.png" id="7_vcp81"]
+[ext_resource type="Texture2D" uid="uid://bxvjggi1tpk17" path="res://Assets/Texturas/icons/imageicon_hover.png" id="8_qbyu6"]
+[ext_resource type="Theme" uid="uid://dtgfwhpqariho" path="res://Assets/Temas/Classic95.tres" id="9_qbyu6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mhumt"]
+font = ExtResource("4_mhumt")
+font_size = 10
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.21568628)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3gxl1"]
+font = ExtResource("4_mhumt")
+font_size = 10
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.21568628)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mw3o5"]
+font = ExtResource("4_mhumt")
+font_size = 10
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.21568628)
+
+[node name="Acto1" type="Control" unique_id=1886995024]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=972859111]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4kpvm")
+
+[node name="TrashButton" type="TextureButton" parent="." unique_id=283022742]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0453125
+anchor_top = 0.05952381
+anchor_right = 0.1296875
+anchor_bottom = 0.25000003
+texture_normal = ExtResource("2_hq06j")
+texture_hover = ExtResource("3_eibch")
+metadata/_edit_use_anchors_ = true
+
+[node name="TrashLabel" type="Label" parent="TrashButton" unique_id=1253479239]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Trash"
+label_settings = SubResource("LabelSettings_mhumt")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="FolderButton" type="TextureButton" parent="." unique_id=1849698325]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 63)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0453125
+anchor_top = 0.2761905
+anchor_right = 0.1359375
+anchor_bottom = 0.42619047
+texture_normal = ExtResource("5_3gxl1")
+texture_hover = ExtResource("6_37nxy")
+metadata/_edit_use_anchors_ = true
+
+[node name="FolderLabel" type="Label" parent="FolderButton" unique_id=1051833961]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Documents"
+label_settings = SubResource("LabelSettings_3gxl1")
+
+[node name="FolderButton2" type="TextureButton" parent="." unique_id=20525118]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.815625
+anchor_top = 0.12857144
+anchor_right = 0.9109375
+anchor_bottom = 0.34285715
+texture_normal = ExtResource("7_vcp81")
+texture_hover = ExtResource("8_qbyu6")
+metadata/_edit_use_anchors_ = true
+
+[node name="FolderLabel" type="Label" parent="FolderButton2" unique_id=744447877]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "J&K.png"
+label_settings = SubResource("LabelSettings_mw3o5")
+
+[node name="Tab" type="ColorRect" parent="." unique_id=1802677242]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9285714
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 30.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="HomeButton" type="Button" parent="Tab" unique_id=1131177520]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.033333335
+anchor_right = 0.084375
+anchor_bottom = 0.96666664
+offset_top = 10.0
+offset_right = -46.0
+offset_bottom = -10.0
+grow_vertical = 2
+theme = ExtResource("9_qbyu6")
+theme_override_fonts/font = ExtResource("4_mhumt")
+text = "Home"
+metadata/_edit_use_anchors_ = true
+
+[node name="FolderButton" type="TextureButton" parent="Tab" unique_id=60844987]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.096875
+anchor_top = 0.16666667
+anchor_right = 0.1421875
+anchor_bottom = 0.8333333
+offset_right = 29.0
+offset_bottom = 20.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_3gxl1")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
