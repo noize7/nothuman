@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bwy34u7njsflj"]
+
+[ext_resource type="Script" uid="uid://b85begw1wqbvg" path="res://Scripts/light_scene.gd" id="1_8ixyv"]
+
+[node name="LightScene" type="OmniLight3D" unique_id=148889367]
+light_color = Color(0.9650354, 0.9693783, 0.94696814, 1)
+light_energy = 0.2
+script = ExtResource("1_8ixyv")
+metadata/light_meta = "light"

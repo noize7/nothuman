@@ -37,10 +37,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7228222, -0.27414966)
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=2018830738]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18525743, -0.14471531, -0.2343328)
 visible = false
+light_color = Color(1, 0.9411765, 0.88235295, 1)
+light_energy = 0.5
 light_projector = ExtResource("2_58h11")
 shadow_enabled = true
 spot_range = 10.098
-spot_angle = 32.33
+spot_angle = 30.0
+spot_angle_attenuation = 0.5
 
 [node name="RayCast" type="RayCast3D" parent="Camera3D" unique_id=1261637537]
 target_position = Vector3(0, 0, -3)
