@@ -1,8 +1,4 @@
 res://Escenas/EscenasIndividuales/PoliceOffice.tscn
 res://Shaders/vhs.gdshader
 res://Assets/Temas/Classic95.tres
-res://Escenas/mapa_pruebas.tscn
-res://Scripts/player.gd
-res://Escenas/EscenasIndividuales/light_scene.tscn
-res://Scripts/light_scene.gd
 res://Escenas/EscenasIndividuales/player.tscn
