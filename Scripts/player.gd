@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 const SPEED = 2.5
 const JUMP_VELOCITY = 4.5
-const MOUSE_SENSITIVITY = 0.002
+#const MOUSE_SENSITIVITY = 0.002
 
 # Sensaciones humanas
 const LOOK_SMOOTH = 12.0
@@ -39,6 +39,9 @@ var ultimo_objeto = null
 var tiempo_gracia := 0.2
 var timer_gracia := 0.0
 
+# Variables Pausa
+@onready var pausa_canvas: CanvasLayer = $PausaCanvas
+@onready var shader: ColorRect = $Canvas/Shader
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -48,8 +51,8 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		target_rot_y -= event.relative.x * MOUSE_SENSITIVITY
-		rotation_x -= event.relative.y * MOUSE_SENSITIVITY
+		target_rot_y -= event.relative.x * Settings.mouse_sensitivity
+		rotation_x -= event.relative.y * Settings.mouse_sensitivity
 		rotation_x = clamp(rotation_x, deg_to_rad(-80), deg_to_rad(80))
 
 		# Linterna
@@ -58,6 +61,10 @@ func _input(event):
 
 	if event.is_action_pressed("cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		air.visible = false
+		pausa_canvas.visible = true
+		shader.material.set_shader_parameter("pixel_resolution", 512.0)
+		get_tree().paused = true
 
 	#Funcion de Linterna
 	if event.is_action_pressed("light"):
@@ -218,3 +225,7 @@ func abrir_puerta(puerta):
 func funLintern():
 	toggleLight = !toggleLight
 	spot_light_3d.visible = toggleLight
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	Settings.mouse_sensitivity = value

@@ -1,4 +1,7 @@
-res://Escenas/EscenasIndividuales/PoliceOffice.tscn
+res://Escenas/EscenasIndividuales/player.tscn
 res://Shaders/vhs.gdshader
 res://Assets/Temas/Classic95.tres
-res://Escenas/EscenasIndividuales/player.tscn
+res://Scripts/pausa_control.gd
+res://Scripts/player.gd
+res://Escenas/acto_1.tscn
+res://Scripts/settings.gd
