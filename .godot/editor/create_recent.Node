@@ -1,3 +1,5 @@
+AudioStreamPlayer
+AudioStreamPlayer3D
 Button
 Label
 HSlider
@@ -5,8 +7,6 @@ VBoxContainer
 ColorRect
 TextureRect
 Control
-AudioStreamPlayer
-AudioStreamPlayer3D
 HBoxContainer
 MarginContainer
 CenterContainer

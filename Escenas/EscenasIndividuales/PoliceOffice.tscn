@@ -353,7 +353,7 @@ shape = SubResource("BoxShape3D_f3ugm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model_016/root_003/GLTF_SceneRootNode_003/estanteria_0_003/Object_4_004/StaticBody3D" index="0" unique_id=1031839146]
 shape = SubResource("BoxShape3D_v8pwo")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Water_cooler" parent_id_path=PackedInt32Array(915064528) index="0" unique_id=1413506067]
+[node name="StaticBody3D" type="StaticBody3D" parent="Water_cooler" parent_id_path=PackedInt32Array(915064528) index="0" unique_id=1413506067 groups=["bebedero"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -79.07118)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Water_cooler/StaticBody3D" index="0" unique_id=1834268378]
@@ -375,7 +375,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5258789e-05, 1.0922813, 55.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model_021/Collada visual scene group_006/Cube_004/defaultMaterial_007/StaticBody3D" index="0" unique_id=1149397762]
 shape = SubResource("BoxShape3D_dscp3")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Water_cooler_001" parent_id_path=PackedInt32Array(1017844289) index="0" unique_id=1604024235]
+[node name="StaticBody3D" type="StaticBody3D" parent="Water_cooler_001" parent_id_path=PackedInt32Array(1017844289) index="0" unique_id=1604024235 groups=["bebedero"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -79.07118)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Water_cooler_001/StaticBody3D" index="0" unique_id=1854586686]

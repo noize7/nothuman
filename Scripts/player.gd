@@ -33,7 +33,7 @@ var flashlight_target := Vector2.ZERO
 @onready var air: ColorRect = $Canvas/Air
 
 var objeto_actual = null
-
+var puede_reproducir_bebedero = true
 # 🔥 FIX PUERTAS
 var ultimo_objeto = null
 var tiempo_gracia := 0.2
@@ -139,6 +139,8 @@ func _physics_process(delta: float) -> void:
 
 	var encontrado = null
 
+	var bebedero_detectado = null
+	
 	if raycast.is_colliding():
 		var obj = raycast.get_collider()
 
@@ -148,7 +150,11 @@ func _physics_process(delta: float) -> void:
 				ultimo_objeto = obj
 				timer_gracia = tiempo_gracia
 				break
+			if obj.is_in_group("bebedero"):
+				bebedero_detectado = obj
+				break
 			obj = obj.get_parent()
+			
 
 	# 🔥 FIX: mantener objeto aunque se pierda por rotación
 	if encontrado:
@@ -165,14 +171,20 @@ func _physics_process(delta: float) -> void:
 	# =========================
 
 	var target_scale = Vector2.ONE
-
-	if objeto_actual:
+	var interactuable = objeto_actual or bebedero_detectado
+	if interactuable:
 		var pulse = sin(Time.get_ticks_msec() * 0.01) * 0.05
 		target_scale = Vector2(1.3 + pulse, 1.3 + pulse)
 
 	air.scale = air.scale.lerp(target_scale, delta * 8.0)
-	if Input.is_action_just_pressed("interact") and objeto_actual:
-		abrir_puerta(objeto_actual)
+	if Input.is_action_just_pressed("interact"):
+		# 🚪 puertas
+		if objeto_actual:
+			abrir_puerta(objeto_actual)
+		# 🚰 bebedero
+		elif bebedero_detectado and puede_reproducir_bebedero:
+			puede_reproducir_bebedero = false
+			$Bebedero.play()
 
 # =========================
 # 🚪 PUERTAS (FIX COMPLETO)
@@ -229,3 +241,7 @@ func funLintern():
 
 func _on_h_slider_value_changed(value: float) -> void:
 	Settings.mouse_sensitivity = value
+
+# 🚰 bebedero
+func _on_bebedero_finished() -> void:
+	puede_reproducir_bebedero = true
