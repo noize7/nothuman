@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://crww3vh15ulod"]
 
 [ext_resource type="Texture2D" uid="uid://crgmuulnpub3u" path="res://Assets/Texturas/background2.png" id="1_4kpvm"]
+[ext_resource type="Script" uid="uid://m7eviu38apu8" path="res://Scripts/acto_1.gd" id="1_mw3o5"]
 [ext_resource type="Texture2D" uid="uid://5kgl2wfsox4q" path="res://Assets/Texturas/icons/trashicon2.png" id="2_hq06j"]
 [ext_resource type="Texture2D" uid="uid://cshmtdw3ttnag" path="res://Assets/Texturas/icons/trashicon2_hover.png" id="3_eibch"]
 [ext_resource type="FontFile" uid="uid://dvh6nlca63mch" path="res://Assets/Fuentes/Bitter-Medium.ttf" id="4_mhumt"]
@@ -9,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://wckrex0sscat" path="res://Assets/Texturas/icons/imageicon.png" id="7_vcp81"]
 [ext_resource type="Texture2D" uid="uid://bxvjggi1tpk17" path="res://Assets/Texturas/icons/imageicon_hover.png" id="8_qbyu6"]
 [ext_resource type="Theme" uid="uid://dtgfwhpqariho" path="res://Assets/Temas/Classic95.tres" id="9_qbyu6"]
+[ext_resource type="Texture2D" uid="uid://g51x0cv6w01r" path="res://Assets/Texturas/icons/settingsIcon.png" id="11_d8pr1"]
+[ext_resource type="Texture2D" uid="uid://cwbuswpb6aox5" path="res://Assets/Texturas/icons/ShutdownIcon.png" id="12_80n6l"]
+[ext_resource type="Texture2D" uid="uid://d121sonh4rf6d" path="res://Assets/Texturas/icons/restartIcon.png" id="13_03puh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mhumt"]
 font = ExtResource("4_mhumt")
@@ -35,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mw3o5")
 
 [node name="Background" type="TextureRect" parent="." unique_id=972859111]
 layout_mode = 1
@@ -172,3 +177,82 @@ texture_normal = ExtResource("5_3gxl1")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundMenuHome" type="ColorRect" parent="." unique_id=1193129152]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9285714
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuHome" type="ColorRect" parent="BackgroundMenuHome" unique_id=1334194748]
+custom_minimum_size = Vector2(150, 300)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2308718
+anchor_right = 0.234375
+anchor_bottom = 1.0001026
+offset_bottom = -3.0517578e-05
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsIcon" type="Button" parent="BackgroundMenuHome" unique_id=1373362942]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.34615386
+anchor_right = 0.234375
+anchor_bottom = 0.45897436
+theme = ExtResource("9_qbyu6")
+theme_override_fonts/font = ExtResource("4_mhumt")
+text = "SETTINGS"
+icon = ExtResource("11_d8pr1")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsIcon2" type="Button" parent="BackgroundMenuHome" unique_id=573247560]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.23076923
+anchor_right = 0.234375
+anchor_bottom = 0.34359
+theme = ExtResource("9_qbyu6")
+theme_override_fonts/font = ExtResource("4_mhumt")
+text = "START"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitIcon" type="Button" parent="BackgroundMenuHome" unique_id=2067137523]
+layout_mode = 0
+anchor_left = 0.125
+anchor_top = 0.9076923
+anchor_right = 0.1734375
+anchor_bottom = 0.98717946
+theme = ExtResource("9_qbyu6")
+icon = ExtResource("12_80n6l")
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RestartIcon" type="Button" parent="BackgroundMenuHome" unique_id=1419059835]
+layout_mode = 0
+anchor_left = 0.125
+anchor_top = 0.9076923
+anchor_right = 0.1734375
+anchor_bottom = 0.98717946
+offset_left = 35.0
+offset_right = 35.0
+theme = ExtResource("9_qbyu6")
+icon = ExtResource("13_03puh")
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Tab/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="mouse_entered" from="BackgroundMenuHome/SettingsIcon2" to="." method="_on_settings_icon_2_mouse_entered"]
+[connection signal="mouse_exited" from="BackgroundMenuHome/SettingsIcon2" to="." method="_on_settings_icon_2_mouse_exited"]
+[connection signal="pressed" from="BackgroundMenuHome/ExitIcon" to="." method="_on_exit_icon_pressed"]
