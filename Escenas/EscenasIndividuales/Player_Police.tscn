@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://8nhbauub3gvm"]
+
+[ext_resource type="PackedScene" uid="uid://y6b2rf7wok15" path="res://Assets/Modelos/Player/Police2_2.glb" id="1_q5b1n"]
+
+[node name="Police2_2" unique_id=1170864101 instance=ExtResource("1_q5b1n")]
