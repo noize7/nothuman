@@ -36,7 +36,6 @@ shader_parameter/vintage_strength = 0.8
 
 [node name="Player" type="CharacterBody3D" unique_id=572624633]
 script = ExtResource("1_nairf")
-flashlight_scene = ExtResource("4_rg145")
 
 [node name="Colision" type="CollisionShape3D" parent="." unique_id=963648589]
 shape = SubResource("CapsuleShape3D_dh3jt")
@@ -50,6 +49,9 @@ volume_db = 9.701
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=27285375]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005865276, 0.7228222, -0.21770391)
+
+[node name="Linterna" parent="Camera3D" unique_id=1240722614 instance=ExtResource("4_rg145")]
+transform = Transform3D(0.20956734, 0, -0.9777942, 0, 1, 0, 0.9777942, 0, 0.20956734, 0.36695042, -0.2534197, -0.4049076)
 
 [node name="RayCast" type="RayCast3D" parent="Camera3D" unique_id=1261637537]
 target_position = Vector3(0, 0, -3)

@@ -2,11 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://dyoi33tfcnowo" path="res://Assets/Modelos/Linterna/linterna.glb" id="1_1ro4h"]
 [ext_resource type="Texture2D" uid="uid://byj3lna8msiqf" path="res://Assets/Texturas/projector.png" id="2_farx1"]
+[ext_resource type="Script" uid="uid://dbq4xunycm27r" path="res://Scripts/linterna.gd" id="2_mimue"]
 
-[node name="Sketchfab_Scene" unique_id=1240722614 instance=ExtResource("1_1ro4h")]
+[node name="Linterna" unique_id=1240722614 instance=ExtResource("1_1ro4h")]
+script = ExtResource("2_mimue")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." index="0" unique_id=1499286811]
+[node name="Light" type="SpotLight3D" parent="." index="0" unique_id=1499286811]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.07047145, 0.0013432503, -2.798438e-05)
+visible = false
 light_color = Color(1, 0.9411765, 0.88235295, 1)
 light_energy = 0.5
 light_projector = ExtResource("2_farx1")

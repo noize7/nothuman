@@ -1,6 +1,7 @@
 Node3D
-BoneAttachment3D
+Marker3D
 SkeletonIK3D
+BoneAttachment3D
 Button
 TextureButton
 TextureRect
@@ -11,4 +12,3 @@ Label
 HSlider
 VBoxContainer
 Control
-HBoxContainer

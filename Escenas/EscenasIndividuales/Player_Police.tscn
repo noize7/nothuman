@@ -3,3 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://y6b2rf7wok15" path="res://Assets/Modelos/Player/Police2_2.glb" id="1_q5b1n"]
 
 [node name="Police2_2" unique_id=1170864101 instance=ExtResource("1_q5b1n")]
+
+[node name="Skeleton3D" parent="metarig" parent_id_path=PackedInt32Array(1778387197) index="0" unique_id=1215291765]
+bones/20/rotation = Quaternion(0.08942555, 0.008238242, -0.012310057, 0.9958834)
+bones/24/rotation = Quaternion(0.98540443, -0.045858312, 0.00756007, 0.16376212)
+bones/25/rotation = Quaternion(0.08916192, -0.008200207, -0.0031049808, 0.9959786)

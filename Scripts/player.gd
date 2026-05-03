@@ -44,11 +44,12 @@ var timer_gracia := 0.0
 # =========================
 @onready var AnimationsPlayer : AnimationPlayer = $Police2_2/AnimationPlayer
 
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	base_cam_y = camera.position.y
 	air.pivot_offset = air.size / 2
+	
+
 
 
 func _input(event):
@@ -163,7 +164,6 @@ func _physics_process(delta: float) -> void:
 		elif bebedero_detectado and puede_reproducir_bebedero:
 			puede_reproducir_bebedero = false
 			$Bebedero.play()
-
 
 # =========================
 # 🚪 PUERTAS
