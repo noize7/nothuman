@@ -1,7 +1,6 @@
-res://Escenas/EscenasIndividuales/Linterna.tscn
+res://Escenas/EscenasIndividuales/player.tscn
 res://Shaders/vhs.gdshader
 res://Assets/Temas/Classic95.tres
-res://Scripts/linterna.gd
-res://Escenas/EscenasIndividuales/player.tscn
+res://Escenas/EscenasIndividuales/PoliceOffice.tscn
+res://Scripts/areawalk_1.gd
 res://Scripts/player.gd
-res://Escenas/EscenasIndividuales/Player_Police.tscn

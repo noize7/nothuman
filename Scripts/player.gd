@@ -44,12 +44,17 @@ var timer_gracia := 0.0
 # =========================
 @onready var AnimationsPlayer : AnimationPlayer = $Police2_2/AnimationPlayer
 
+# =========================
+# SONIDOS DE CAMINAR
+# =========================
+@onready var ray_cast_walk: RayCast3D = $RayCastWalk
+@onready var walk_1: AudioStreamPlayer3D = $Walk
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	base_cam_y = camera.position.y
 	air.pivot_offset = air.size / 2
-	
-
 
 
 func _input(event):
@@ -67,7 +72,6 @@ func _input(event):
 
 
 func _physics_process(delta: float) -> void:
-
 	# =========================
 	# MOVIMIENTO
 	# =========================
@@ -145,6 +149,13 @@ func _physics_process(delta: float) -> void:
 			objeto_actual = ultimo_objeto
 		else:
 			objeto_actual = null
+			
+	# =========================
+	# RAYCAST SONIDOS
+	# =========================
+	#TRABAJAR
+
+
 
 	# =========================
 	# UI
@@ -204,6 +215,7 @@ func abrir_puerta(puerta):
 	tween.finished.connect(func():
 		puerta.set_meta("moviendo", false)
 	)
+
 
 
 func _on_h_slider_value_changed(value: float) -> void:

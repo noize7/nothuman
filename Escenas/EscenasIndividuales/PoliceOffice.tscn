@@ -131,13 +131,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0175782, -0.0062113106, 3, -0.
 [node name="Front windows" parent="." index="4" unique_id=1111229317]
 transform = Transform3D(-1.1920929e-07, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -1.1920929e-07, -0.2763382, 1.7153335, -3.0981064)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(1701313175) index="0" unique_id=1046247920]
+[node name="FloorStatic" type="StaticBody3D" parent="Floor" parent_id_path=PackedInt32Array(1701313175) index="0" unique_id=1046247920]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5e-06, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" index="0" unique_id=1101729980]
+[node name="ColisionFloor" type="CollisionShape3D" parent="Floor/FloorStatic" index="0" unique_id=1101729980]
 shape = SubResource("BoxShape3D_5wfsk")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/StaticBody3D" index="1" unique_id=1607188588]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/FloorStatic" index="1" unique_id=1607188588]
 transform = Transform3D(12.799121, 0, 0, 0, 1, 0, 0, 0, 6.091204, 0, 0.01, 0)
 mesh = SubResource("PlaneMesh_rt4nn")
 

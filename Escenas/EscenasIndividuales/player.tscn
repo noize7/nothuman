@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://dvh6nlca63mch" path="res://Assets/Fuentes/Bitter-Medium.ttf" id="5_ank8x"]
 [ext_resource type="AudioStream" uid="uid://bbs3tng1nscni" path="res://Assets/Sonidos/paused_menu.mp3" id="6_ue2g6"]
 [ext_resource type="Texture2D" uid="uid://cysc5kttpr2ci" path="res://Assets/Texturas/TextureSettingsMenu2.png" id="7_5uqy4"]
+[ext_resource type="AudioStream" uid="uid://pwgvfmhjs0iu" path="res://Assets/Sonidos/walksound1.mp3" id="11_rg145"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dh3jt"]
 
@@ -293,6 +294,11 @@ offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Walk" type="AudioStreamPlayer3D" parent="." unique_id=1832493573]
+stream = ExtResource("11_rg145")
+
+[node name="RayCastWalk" type="RayCast3D" parent="." unique_id=1353934803]
 
 [connection signal="finished" from="Bebedero" to="." method="_on_bebedero_finished"]
 [connection signal="mouse_entered" from="PausaCanvas/PausaControl/VBoxContainer/ButtonResume" to="PausaCanvas/PausaControl" method="_on_button_resume_mouse_entered"]
