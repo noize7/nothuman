@@ -1,6 +1,6 @@
 res://Escenas/EscenasIndividuales/player.tscn
 res://Shaders/vhs.gdshader
 res://Assets/Temas/Classic95.tres
-res://Escenas/EscenasIndividuales/PoliceOffice.tscn
-res://Scripts/areawalk_1.gd
 res://Scripts/player.gd
+res://Escenas/acto_1.tscn
+res://Scripts/acto_1.gd

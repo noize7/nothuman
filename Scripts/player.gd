@@ -49,7 +49,17 @@ var timer_gracia := 0.0
 # =========================
 @onready var ray_cast_walk: RayCast3D = $RayCastWalk
 @onready var walk_1: AudioStreamPlayer3D = $Walk
+@onready var walk_2: AudioStreamPlayer3D = $Walk2
+@onready var walk_3: AudioStreamPlayer3D = $Walk3
 
+enum estadoSonidoCaminar{
+	walkInside,
+	walkGrass,
+	walkStone
+}
+@export_category("Sonidos al Caminar")
+@export var estadoSonido: estadoSonidoCaminar = estadoSonidoCaminar.walkInside
+var tiempo_paso = 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -154,8 +164,7 @@ func _physics_process(delta: float) -> void:
 	# RAYCAST SONIDOS
 	# =========================
 	#TRABAJAR
-
-
+	sonidos_caminar(delta)
 
 	# =========================
 	# UI
@@ -177,9 +186,10 @@ func _physics_process(delta: float) -> void:
 			$Bebedero.play()
 
 # =========================
-# 🚪 PUERTAS
+# PUERTAS
 # =========================
 func abrir_puerta(puerta):
+	
 
 	if puerta.has_meta("moviendo") and puerta.get_meta("moviendo"):
 		return
@@ -216,6 +226,37 @@ func abrir_puerta(puerta):
 		puerta.set_meta("moviendo", false)
 	)
 
+# =========================
+# SONIDOS DE CAMINAR
+# =========================
+func sonidos_caminar(delta):
+	var moviendose = is_on_floor() and Vector2(velocity.x, velocity.z).length() > 0.1
+	
+	var audio_actual: AudioStreamPlayer3D
+	var intervalo: float
+
+	match estadoSonido:
+		estadoSonidoCaminar.walkInside:
+			audio_actual = walk_1
+			intervalo = 1.0
+		estadoSonidoCaminar.walkGrass:
+			audio_actual = walk_2
+			intervalo = 0.6
+		estadoSonidoCaminar.walkStone:
+			audio_actual = walk_3
+			intervalo = 0.4
+
+	if moviendose:
+		tiempo_paso -= delta
+		
+		if tiempo_paso <= 0:
+			audio_actual.pitch_scale = randf_range(0.9, 1.1)
+			audio_actual.play()
+			tiempo_paso = intervalo
+	else:
+		if audio_actual and audio_actual.playing:
+			audio_actual.stop()
+	
 
 
 func _on_h_slider_value_changed(value: float) -> void:

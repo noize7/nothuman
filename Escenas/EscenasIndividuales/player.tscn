@@ -10,7 +10,9 @@
 [ext_resource type="FontFile" uid="uid://dvh6nlca63mch" path="res://Assets/Fuentes/Bitter-Medium.ttf" id="5_ank8x"]
 [ext_resource type="AudioStream" uid="uid://bbs3tng1nscni" path="res://Assets/Sonidos/paused_menu.mp3" id="6_ue2g6"]
 [ext_resource type="Texture2D" uid="uid://cysc5kttpr2ci" path="res://Assets/Texturas/TextureSettingsMenu2.png" id="7_5uqy4"]
-[ext_resource type="AudioStream" uid="uid://pwgvfmhjs0iu" path="res://Assets/Sonidos/walksound1.mp3" id="11_rg145"]
+[ext_resource type="AudioStream" uid="uid://pb0ufkgo67c" path="res://Assets/Sonidos/walksound1_2.mp3" id="11_rg145"]
+[ext_resource type="AudioStream" uid="uid://nb5w2frde0oy" path="res://Assets/Sonidos/walksound2.mp3" id="12_mf80y"]
+[ext_resource type="AudioStream" uid="uid://ctg7xk11l5m5l" path="res://Assets/Sonidos/walksound3.mp3" id="13_bnog6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dh3jt"]
 
@@ -297,6 +299,12 @@ mouse_filter = 2
 
 [node name="Walk" type="AudioStreamPlayer3D" parent="." unique_id=1832493573]
 stream = ExtResource("11_rg145")
+
+[node name="Walk2" type="AudioStreamPlayer3D" parent="." unique_id=818134932]
+stream = ExtResource("12_mf80y")
+
+[node name="Walk3" type="AudioStreamPlayer3D" parent="." unique_id=1464707321]
+stream = ExtResource("13_bnog6")
 
 [node name="RayCastWalk" type="RayCast3D" parent="." unique_id=1353934803]
 
