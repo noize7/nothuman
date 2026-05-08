@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dyoi33tfcnowo" path="res://Assets/Modelos/Linterna/linterna.glb" id="1_1ro4h"]
 [ext_resource type="Texture2D" uid="uid://byj3lna8msiqf" path="res://Assets/Texturas/projector.png" id="2_farx1"]
 [ext_resource type="Script" uid="uid://dbq4xunycm27r" path="res://Scripts/linterna.gd" id="2_mimue"]
+[ext_resource type="AudioStream" uid="uid://csr4p7du2vs2w" path="res://Assets/Sonidos/light_switch_on.mp3" id="4_ixlet"]
 
 [node name="Linterna" unique_id=1240722614 instance=ExtResource("1_1ro4h")]
 script = ExtResource("2_mimue")
@@ -17,3 +18,9 @@ shadow_enabled = true
 spot_range = 10.098
 spot_angle = 30.0
 spot_angle_attenuation = 0.5
+
+[node name="AudioSwitch" type="AudioStreamPlayer3D" parent="." index="1" unique_id=297374100]
+stream = ExtResource("4_ixlet")
+
+[node name="Object_2" parent="Sketchfab_model/80726a169adf4a548c1ed385f0b522e1_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(757021587) index="0" unique_id=1665641116]
+visible = false

@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 2.5
+const SPEED = 5
 const JUMP_VELOCITY = 4.5
 
 # Sensaciones humanas
@@ -136,10 +136,9 @@ func _physics_process(delta: float) -> void:
 	# =========================
 	var encontrado = null
 	var bebedero_detectado = null
-
+	var linterna_detectado = null
 	if raycast.is_colliding():
 		var obj = raycast.get_collider()
-
 		while obj:
 			if obj.is_in_group("puertas"):
 				encontrado = obj
@@ -148,6 +147,9 @@ func _physics_process(delta: float) -> void:
 				break
 			if obj.is_in_group("bebedero"):
 				bebedero_detectado = obj
+				break
+			if obj.is_in_group("Linterna"):
+				linterna_detectado = obj
 				break
 			obj = obj.get_parent()
 
@@ -170,11 +172,11 @@ func _physics_process(delta: float) -> void:
 	# UI
 	# =========================
 	var target_scale = Vector2.ONE
-	var interactuable = objeto_actual or bebedero_detectado
+	var interactuable = objeto_actual or bebedero_detectado or linterna_detectado
 
 	if interactuable:
 		var pulse = sin(Time.get_ticks_msec() * 0.01) * 0.05
-		target_scale = Vector2(1.3 + pulse, 1.3 + pulse)
+		target_scale = Vector2(1.5 + pulse, 1.5 + pulse)
 
 	air.scale = air.scale.lerp(target_scale, delta * 8.0)
 
@@ -184,6 +186,9 @@ func _physics_process(delta: float) -> void:
 		elif bebedero_detectado and puede_reproducir_bebedero:
 			puede_reproducir_bebedero = false
 			$Bebedero.play()
+		elif linterna_detectado:
+			linterna_detectado.get_node("AudioPickup").play()
+			GameManager.LinternInventory = true
 
 # =========================
 # PUERTAS

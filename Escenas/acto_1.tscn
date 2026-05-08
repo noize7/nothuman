@@ -163,6 +163,37 @@ icon = ExtResource("9_d8pr1")
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
+[node name="BackAudio" type="ColorRect" parent="Tab/AudioButton" unique_id=1803556825]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.5
+offset_top = -49.5
+offset_right = 18.5
+offset_bottom = -23.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Audio" type="HScrollBar" parent="Tab/AudioButton/BackAudio" unique_id=1279922907]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -8.0
+offset_right = 54.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_qbyu6")
+step = 10.0
+
 [node name="BackgroundMenuHome" type="ColorRect" parent="." unique_id=1193129152]
 visible = false
 layout_mode = 1
@@ -225,6 +256,8 @@ expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Tab/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="Tab/AudioButton" to="." method="_on_audio_button_pressed"]
+[connection signal="value_changed" from="Tab/AudioButton/BackAudio/Audio" to="." method="_on_audio_value_changed"]
 [connection signal="mouse_entered" from="BackgroundMenuHome/SettingsIcon2" to="." method="_on_settings_icon_2_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundMenuHome/SettingsIcon2" to="." method="_on_settings_icon_2_mouse_exited"]
 [connection signal="pressed" from="BackgroundMenuHome/SettingsIcon2" to="." method="_on_settings_icon_2_pressed"]

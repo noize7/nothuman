@@ -1,7 +1,11 @@
 extends Control
 
+
+var switch : bool = false
+
 # Tab
 @onready var home_button: Button = $Tab/HomeButton
+@onready var back_audio: ColorRect = $Tab/AudioButton/BackAudio
 
 
 # Menu Home
@@ -28,3 +32,17 @@ func _on_settings_icon_2_mouse_exited() -> void:
 func _on_settings_icon_2_pressed() -> void:
 	background_menu_home.visible = false
 	home_button.disabled = true
+	get_tree().change_scene_to_file("res://Escenas/mapa_pruebas.tscn")
+	
+	
+	
+#Tabs Botones
+# - AudioBoton
+
+func _on_audio_button_pressed() -> void:
+	switch = !switch
+	back_audio.visible = switch
+
+
+func _on_audio_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))

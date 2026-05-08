@@ -3,6 +3,7 @@ extends Node3D
 @onready var light: SpotLight3D = $Light
 @onready var mesh: Node3D = $"Sketchfab_model/80726a169adf4a548c1ed385f0b522e1_obj_cleaner_materialmerger_gles/Object_2"
 @onready var camera: Camera3D = get_parent()
+@onready var audio_switch: AudioStreamPlayer3D = $AudioSwitch
 
 var switch: bool = false
 
@@ -34,14 +35,16 @@ func _input(event: InputEvent) -> void:
 		mouse_delta = event.relative
 	
 	if event.is_action_pressed("light"):
-		switch = !switch
-		light.visible = switch
-		mesh.visible = switch
-		
-		if switch:
-			target_quat = camera.global_transform.basis.get_rotation_quaternion()
-			current_quat = target_quat
-			light.global_transform.basis = Basis(current_quat)
+		if GameManager.LinternInventory == true:
+			audio_switch.play()
+			switch = !switch
+			light.visible = switch
+			mesh.visible = switch
+			
+			if switch:
+				target_quat = camera.global_transform.basis.get_rotation_quaternion()
+				current_quat = target_quat
+				light.global_transform.basis = Basis(current_quat)
 
 
 func _process(delta: float) -> void:
@@ -84,7 +87,6 @@ func _process(delta: float) -> void:
 	else:
 		bob_time = 0.0
 		bob_offset.y = lerp(bob_offset.y, 0.0, 5 * delta)
-	
 	
 	# =========================
 	# APLICAR AL MESH
