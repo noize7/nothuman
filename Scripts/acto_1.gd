@@ -6,11 +6,18 @@ var switch : bool = false
 # Tab
 @onready var home_button: Button = $Tab/HomeButton
 @onready var back_audio: ColorRect = $Tab/AudioButton/BackAudio
-
+@onready var label_value: Label = $Tab/AudioButton/BackAudio/LabelValue
+@onready var audio: HScrollBar = $Tab/AudioButton/BackAudio/Audio
 
 # Menu Home
 @onready var background_menu_home: ColorRect = $BackgroundMenuHome
 @onready var settings_icon_2: Button = $BackgroundMenuHome/SettingsIcon2
+@onready var trash_button: TextureButton = $TrashButton
+@onready var folder_button: TextureButton = $FolderButton
+
+
+
+
 
 
 # Boton Menu Home
@@ -42,7 +49,10 @@ func _on_settings_icon_2_pressed() -> void:
 func _on_audio_button_pressed() -> void:
 	switch = !switch
 	back_audio.visible = switch
+	trash_button.disabled = switch
+	folder_button.disabled = switch
 
-
+# - Cambio de Valor de audio
 func _on_audio_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))
+	GameManager.set_volume(value)
+	label_value.text = str(int(GameManager.volume_value))

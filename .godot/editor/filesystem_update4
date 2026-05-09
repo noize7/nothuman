@@ -1,12 +1,9 @@
-res://Escenas/EscenasIndividuales/light_scene.tscn
+res://Escenas/acto_1.tscn
 res://Assets/Temas/Classic95.tres
 res://Shaders/vhs.gdshader
-res://Scripts/linterna.gd
-res://Escenas/EscenasIndividuales/Linterna.tscn
-res://Escenas/EscenasIndividuales/player.tscn
-res://Scripts/GameManager.gd
-res://Escenas/EscenasIndividuales/PoliceOffice.tscn
-res://Scripts/player.gd
 res://Shaders/bordes_aim.gdshader
-res://Escenas/acto_1.tscn
+res://Scripts/GameManager.gd
 res://Scripts/acto_1.gd
+res://Escenas/mapa_pruebas.tscn
+res://Escenas/EscenasIndividuales/player.tscn
+res://Scripts/pausa_control.gd

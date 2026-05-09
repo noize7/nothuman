@@ -8,6 +8,11 @@ extends Control
 @onready var air: ColorRect = $"../../Canvas/Air"
 @onready var settings_control: Control = $SettingsControl
 @onready var shader: ColorRect = $"../../Canvas/Shader"
+@onready var h_slider_volume: HSlider = $SettingsControl/VBoxContainer/HSliderVolume
+func _ready() -> void:
+	h_slider_volume.value = GameManager.volume_value
+	
+
 
 #Signals Button Resume
 func _on_button_resume_mouse_entered() -> void:
@@ -38,7 +43,7 @@ func _on_button_quit_mouse_entered() -> void:
 func _on_button_quit_mouse_exited() -> void:
 	button_quit.text = "QUIT"
 func _on_button_quit_pressed() -> void:
-	get_tree().quit()
+	pass
 
 #Signals Settings
 func _on_button_pressed() -> void:

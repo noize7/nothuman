@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cjjk4hkhiqfgr" path="res://Assets/Texturas/icons/foldericon_hover.png" id="6_37nxy"]
 [ext_resource type="Texture2D" uid="uid://cl7t72n3mkkd" path="res://Assets/Texturas/icons/audioHomeIcon.svg" id="9_d8pr1"]
 [ext_resource type="Theme" uid="uid://dtgfwhpqariho" path="res://Assets/Temas/Classic95.tres" id="9_qbyu6"]
+[ext_resource type="FontFile" uid="uid://bfajmlarsee6l" path="res://Assets/Fuentes/Bitter-Light.ttf" id="10_80n6l"]
 [ext_resource type="Texture2D" uid="uid://cwbuswpb6aox5" path="res://Assets/Texturas/icons/ShutdownIcon.png" id="12_80n6l"]
 [ext_resource type="Texture2D" uid="uid://d121sonh4rf6d" path="res://Assets/Texturas/icons/restartIcon.png" id="13_03puh"]
 
@@ -26,6 +27,10 @@ shadow_color = Color(0, 0, 0, 0.21568628)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80n6l"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d8pr1"]
+font = ExtResource("10_80n6l")
+font_color = Color(0, 0, 0, 1)
 
 [node name="Acto1" type="Control" unique_id=1886995024]
 layout_mode = 3
@@ -171,12 +176,30 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -105.5
-offset_top = -49.5
+offset_left = -182.5
+offset_top = -66.5
 offset_right = 18.5
 offset_bottom = -23.5
 grow_horizontal = 2
 grow_vertical = 0
+color = Color(0.9384497, 0.9384497, 0.9384497, 1)
+
+[node name="TextureAudio" type="Button" parent="Tab/AudioButton/BackAudio" unique_id=1072204873]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06965174
+anchor_top = 0.07692308
+anchor_right = 0.17910448
+anchor_bottom = 0.9230769
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_80n6l")
+icon = ExtResource("9_d8pr1")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Audio" type="HScrollBar" parent="Tab/AudioButton/BackAudio" unique_id=1279922907]
 layout_mode = 1
@@ -193,6 +216,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("9_qbyu6")
 step = 10.0
+value = 50.0
+
+[node name="LabelValue" type="Label" parent="Tab/AudioButton/BackAudio" unique_id=439936184]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8208955
+anchor_top = 0.115384616
+anchor_right = 0.91542286
+anchor_bottom = 0.88461536
+grow_horizontal = 0
+grow_vertical = 2
+text = "50"
+label_settings = SubResource("LabelSettings_d8pr1")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundMenuHome" type="ColorRect" parent="." unique_id=1193129152]
 visible = false
@@ -243,12 +282,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RestartIcon" type="Button" parent="BackgroundMenuHome" unique_id=1419059835]
 layout_mode = 0
-anchor_left = 0.125
+anchor_left = 0.1796875
 anchor_top = 0.9076923
-anchor_right = 0.1734375
+anchor_right = 0.228125
 anchor_bottom = 0.98717946
-offset_left = 35.0
-offset_right = 35.0
 theme = ExtResource("9_qbyu6")
 icon = ExtResource("13_03puh")
 icon_alignment = 1
