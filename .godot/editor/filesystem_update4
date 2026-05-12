@@ -2,8 +2,4 @@ res://Escenas/acto_1.tscn
 res://Assets/Temas/Classic95.tres
 res://Shaders/vhs.gdshader
 res://Shaders/bordes_aim.gdshader
-res://Scripts/GameManager.gd
 res://Scripts/acto_1.gd
-res://Escenas/mapa_pruebas.tscn
-res://Escenas/EscenasIndividuales/player.tscn
-res://Scripts/pausa_control.gd

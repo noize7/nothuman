@@ -6,20 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://cshmtdw3ttnag" path="res://Assets/Texturas/icons/trashicon2_hover.png" id="3_eibch"]
 [ext_resource type="FontFile" uid="uid://dvh6nlca63mch" path="res://Assets/Fuentes/Bitter-Medium.ttf" id="4_mhumt"]
 [ext_resource type="Texture2D" uid="uid://c2orsr5dccdg8" path="res://Assets/Texturas/icons/foldericon.png" id="5_3gxl1"]
-[ext_resource type="Texture2D" uid="uid://cjjk4hkhiqfgr" path="res://Assets/Texturas/icons/foldericon_hover.png" id="6_37nxy"]
 [ext_resource type="Texture2D" uid="uid://cl7t72n3mkkd" path="res://Assets/Texturas/icons/audioHomeIcon.svg" id="9_d8pr1"]
 [ext_resource type="Theme" uid="uid://dtgfwhpqariho" path="res://Assets/Temas/Classic95.tres" id="9_qbyu6"]
 [ext_resource type="FontFile" uid="uid://bfajmlarsee6l" path="res://Assets/Fuentes/Bitter-Light.ttf" id="10_80n6l"]
+[ext_resource type="Texture2D" uid="uid://c64ixpt4eqgcc" path="res://Assets/Texturas/icons/eth_icon.png" id="11_03puh"]
+[ext_resource type="Texture2D" uid="uid://g51x0cv6w01r" path="res://Assets/Texturas/icons/settingsIcon.png" id="12_3mvg1"]
 [ext_resource type="Texture2D" uid="uid://cwbuswpb6aox5" path="res://Assets/Texturas/icons/ShutdownIcon.png" id="12_80n6l"]
+[ext_resource type="Texture2D" uid="uid://80plgqe0h4ea" path="res://Assets/Texturas/icons/letter-x_icon.png" id="12_wcevt"]
 [ext_resource type="Texture2D" uid="uid://d121sonh4rf6d" path="res://Assets/Texturas/icons/restartIcon.png" id="13_03puh"]
+[ext_resource type="Texture2D" uid="uid://wckrex0sscat" path="res://Assets/Texturas/icons/imageicon.png" id="13_4p1sm"]
+[ext_resource type="StyleBox" uid="uid://jiag5vjk8mwd" path="res://Assets/Temas/Styles/Button/Button.tres" id="13_f4p7x"]
+[ext_resource type="Texture2D" uid="uid://b5wv8ahekq6ev" path="res://Assets/Texturas/icons/admin_icon.png" id="13_lv4ef"]
+[ext_resource type="AudioStream" uid="uid://naww0n3xb47q" path="res://Assets/Sonidos/click_effect2.mp3" id="16_yolei"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mhumt"]
-font = ExtResource("4_mhumt")
-font_size = 10
-shadow_size = 2
-shadow_color = Color(0, 0, 0, 0.21568628)
-
-[sub_resource type="LabelSettings" id="LabelSettings_3gxl1"]
 font = ExtResource("4_mhumt")
 font_size = 10
 shadow_size = 2
@@ -31,6 +31,15 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="LabelSettings" id="LabelSettings_d8pr1"]
 font = ExtResource("10_80n6l")
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4p7x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4p1sm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsb2t"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Acto1" type="Control" unique_id=1886995024]
 layout_mode = 3
@@ -80,34 +89,6 @@ label_settings = SubResource("LabelSettings_mhumt")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="FolderButton" type="TextureButton" parent="." unique_id=1849698325]
-texture_filter = 1
-custom_minimum_size = Vector2(0, 63)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0453125
-anchor_top = 0.2761905
-anchor_right = 0.1359375
-anchor_bottom = 0.42619047
-texture_normal = ExtResource("5_3gxl1")
-texture_hover = ExtResource("6_37nxy")
-metadata/_edit_use_anchors_ = true
-
-[node name="FolderLabel" type="Label" parent="FolderButton" unique_id=1051833961]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Documents"
-label_settings = SubResource("LabelSettings_3gxl1")
-
 [node name="Tab" type="ColorRect" parent="." unique_id=1802677242]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 1
@@ -124,15 +105,12 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.033333335
-anchor_right = 0.084375
-anchor_bottom = 0.96666664
-offset_top = 10.0
-offset_right = -46.0
-offset_bottom = -10.0
+anchor_right = 0.0796875
+anchor_bottom = 1.0
 grow_vertical = 2
 theme = ExtResource("9_qbyu6")
 theme_override_fonts/font = ExtResource("4_mhumt")
-text = "Home"
+text = "Inicio"
 metadata/_edit_use_anchors_ = true
 
 [node name="FolderButton" type="TextureButton" parent="Tab" unique_id=60844987]
@@ -233,6 +211,258 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="EthernetIcon" type="Button" parent="Tab" unique_id=1028254693]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9234375
+anchor_top = 0.13333334
+anchor_right = 0.9515625
+anchor_bottom = 0.8
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_80n6l")
+icon = ExtResource("11_03puh")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundArchivos" type="ColorRect" parent="." unique_id=1979337367]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.93095237
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7962427, 0.79624313, 0.796243, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Documents" type="Control" parent="BackgroundArchivos" unique_id=351386488]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Carpeta1" type="Button" parent="BackgroundArchivos/Documents" unique_id=1827053364]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23125
+anchor_top = 0.10741688
+anchor_right = 0.36875
+anchor_bottom = 0.29923275
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mhumt")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4p7x")
+text = "Carpeta1"
+icon = ExtResource("5_3gxl1")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Carpeta2" type="Button" parent="BackgroundArchivos/Documents" unique_id=629848890]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37739843
+anchor_top = 0.10741688
+anchor_right = 0.5148977
+anchor_bottom = 0.29923275
+offset_right = -3.0517578e-05
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mhumt")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_4p1sm")
+text = "Carpeta2"
+icon = ExtResource("5_3gxl1")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Downloads" type="Control" parent="BackgroundArchivos" unique_id=944818207]
+anchors_preset = 0
+
+[node name="Desktop" type="Control" parent="BackgroundArchivos" unique_id=1751640652]
+anchors_preset = 0
+
+[node name="Images" type="Control" parent="BackgroundArchivos" unique_id=1577527216]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ImageJK" type="Button" parent="BackgroundArchivos/Images" unique_id=1263379070]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23125
+anchor_top = 0.10741688
+anchor_right = 0.36875
+anchor_bottom = 0.29923275
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mhumt")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_jsb2t")
+text = "J&K"
+icon = ExtResource("13_4p1sm")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Bar" type="ColorRect" parent="BackgroundArchivos" unique_id=1031334475]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 22.0
+grow_horizontal = 2
+color = Color(0.9428228, 0.94282264, 0.94282264, 1)
+
+[node name="Icon" type="Button" parent="BackgroundArchivos/Bar" unique_id=52460889]
+layout_mode = 0
+anchor_left = 0.009375
+anchor_right = 0.0421875
+anchor_bottom = 1.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_80n6l")
+icon = ExtResource("5_3gxl1")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Button" parent="BackgroundArchivos/Bar" unique_id=2071818734]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.959375
+anchor_right = 0.99375
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_80n6l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_80n6l")
+icon = ExtResource("12_wcevt")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="NameProgram" type="Label" parent="BackgroundArchivos/Bar" unique_id=321013004]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.046875
+anchor_top = 0.22727273
+anchor_right = 0.24375
+anchor_bottom = 0.8181818
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.19215687)
+theme_override_fonts/font = ExtResource("4_mhumt")
+theme_override_font_sizes/font_size = 10
+text = "Administrador de Archivos"
+metadata/_edit_use_anchors_ = true
+
+[node name="SideBar" type="ColorRect" parent="BackgroundArchivos" unique_id=1762726266]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.056265984
+anchor_right = 0.1859375
+anchor_bottom = 1.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Desktop" type="Button" parent="BackgroundArchivos/SideBar" unique_id=1946711053]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075630255
+anchor_top = 0.021680215
+anchor_right = 0.9411765
+anchor_bottom = 0.105691075
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("13_f4p7x")
+theme_override_styles/pressed = ExtResource("13_f4p7x")
+theme_override_styles/hover = ExtResource("13_f4p7x")
+theme_override_styles/disabled = ExtResource("13_f4p7x")
+theme_override_styles/focus = ExtResource("13_f4p7x")
+text = "Desktop"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Downloads" type="Button" parent="BackgroundArchivos/SideBar" unique_id=1177635750]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075630255
+anchor_top = 0.107710026
+anchor_right = 0.9411765
+anchor_bottom = 0.19172141
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("13_f4p7x")
+theme_override_styles/pressed = ExtResource("13_f4p7x")
+theme_override_styles/hover = ExtResource("13_f4p7x")
+theme_override_styles/disabled = ExtResource("13_f4p7x")
+theme_override_styles/focus = ExtResource("13_f4p7x")
+text = "Downloads"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Documents" type="Button" parent="BackgroundArchivos/SideBar" unique_id=1763756410]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075630255
+anchor_top = 0.19428185
+anchor_right = 0.9411765
+anchor_bottom = 0.27829272
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("13_f4p7x")
+theme_override_styles/pressed = ExtResource("13_f4p7x")
+theme_override_styles/hover = ExtResource("13_f4p7x")
+theme_override_styles/disabled = ExtResource("13_f4p7x")
+theme_override_styles/focus = ExtResource("13_f4p7x")
+text = "Documents
+"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Images" type="Button" parent="BackgroundArchivos/SideBar" unique_id=319223963]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075630255
+anchor_top = 0.281897
+anchor_right = 0.9411765
+anchor_bottom = 0.365908
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = ExtResource("13_f4p7x")
+theme_override_styles/pressed = ExtResource("13_f4p7x")
+theme_override_styles/hover = ExtResource("13_f4p7x")
+theme_override_styles/disabled = ExtResource("13_f4p7x")
+theme_override_styles/focus = ExtResource("13_f4p7x")
+text = "Images
+"
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
 [node name="BackgroundMenuHome" type="ColorRect" parent="." unique_id=1193129152]
 visible = false
 layout_mode = 1
@@ -253,18 +483,40 @@ anchor_right = 0.234375
 anchor_bottom = 1.0001026
 offset_bottom = -3.0517578e-05
 grow_vertical = 0
+color = Color(0.9372549, 0.9372549, 0.9372549, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="SettingsIcon2" type="Button" parent="BackgroundMenuHome" unique_id=573247560]
-custom_minimum_size = Vector2(130, 0)
+[node name="AdmArchivos" type="Button" parent="BackgroundMenuHome/MenuHome" unique_id=2034713397]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.113199994
+theme = ExtResource("9_qbyu6")
+text = "Archivos"
+icon = ExtResource("5_3gxl1")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Configuracion" type="Button" parent="BackgroundMenuHome/MenuHome" unique_id=293269551]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.23076923
-anchor_right = 0.234375
-anchor_bottom = 0.34359
+anchor_top = 0.113199994
+anchor_right = 1.0
+anchor_bottom = 0.22639999
 theme = ExtResource("9_qbyu6")
-theme_override_fonts/font = ExtResource("4_mhumt")
-text = "START"
+text = "Configuracion"
+icon = ExtResource("12_3mvg1")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Aplicaciones" type="Button" parent="BackgroundMenuHome/MenuHome" unique_id=1787980692]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.22653332
+anchor_right = 1.0
+anchor_bottom = 0.33973333
+theme = ExtResource("9_qbyu6")
+text = "Cuenta"
+icon = ExtResource("13_lv4ef")
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
@@ -292,10 +544,14 @@ icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=208217096]
+stream = ExtResource("16_yolei")
+
 [connection signal="pressed" from="Tab/HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="Tab/AudioButton" to="." method="_on_audio_button_pressed"]
 [connection signal="value_changed" from="Tab/AudioButton/BackAudio/Audio" to="." method="_on_audio_value_changed"]
-[connection signal="mouse_entered" from="BackgroundMenuHome/SettingsIcon2" to="." method="_on_settings_icon_2_mouse_entered"]
-[connection signal="mouse_exited" from="BackgroundMenuHome/SettingsIcon2" to="." method="_on_settings_icon_2_mouse_exited"]
-[connection signal="pressed" from="BackgroundMenuHome/SettingsIcon2" to="." method="_on_settings_icon_2_pressed"]
+[connection signal="pressed" from="BackgroundArchivos/Bar/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="BackgroundArchivos/SideBar/Documents" to="." method="_on_documents_pressed"]
+[connection signal="pressed" from="BackgroundArchivos/SideBar/Images" to="." method="_on_images_pressed"]
+[connection signal="pressed" from="BackgroundMenuHome/MenuHome/AdmArchivos" to="." method="_on_adm_archivos_pressed"]
 [connection signal="pressed" from="BackgroundMenuHome/ExitIcon" to="." method="_on_exit_icon_pressed"]

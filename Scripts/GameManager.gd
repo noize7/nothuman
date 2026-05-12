@@ -1,5 +1,7 @@
 extends Node
 
+
+var LinternInventory : bool = false
 var volume_value : float = 50
 
 func set_volume(new_value: float):

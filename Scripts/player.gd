@@ -61,6 +61,12 @@ enum estadoSonidoCaminar{
 @export var estadoSonido: estadoSonidoCaminar = estadoSonidoCaminar.walkInside
 var tiempo_paso = 0.0
 
+# =========================
+# FLASHLIGHT
+# =========================
+@onready var flashlight_icon: TextureRect = $Canvas/FlashlightIcon
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	base_cam_y = camera.position.y
@@ -189,6 +195,7 @@ func _physics_process(delta: float) -> void:
 		elif linterna_detectado:
 			linterna_detectado.get_node("AudioPickup").play()
 			GameManager.LinternInventory = true
+			flashlight_show_icon()
 
 # =========================
 # PUERTAS
@@ -261,8 +268,9 @@ func sonidos_caminar(delta):
 	else:
 		if audio_actual and audio_actual.playing:
 			audio_actual.stop()
-	
 
+func flashlight_show_icon():
+	flashlight_icon.visible = true
 
 func _on_h_slider_value_changed(value: float) -> void:
 	Settings.mouse_sensitivity = value

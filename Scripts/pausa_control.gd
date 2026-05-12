@@ -43,7 +43,20 @@ func _on_button_quit_mouse_entered() -> void:
 func _on_button_quit_mouse_exited() -> void:
 	button_quit.text = "QUIT"
 func _on_button_quit_pressed() -> void:
-	pass
+	get_tree().paused = false
+	await cambiar_escena("res://Escenas/acto_1.tscn")
+
+func cambiar_escena(path):
+
+	ResourceLoader.load_threaded_request(path)
+
+	while ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+		await get_tree().process_frame
+
+	var escena = ResourceLoader.load_threaded_get(path)
+
+	get_tree().change_scene_to_packed(escena)
+
 
 #Signals Settings
 func _on_button_pressed() -> void:

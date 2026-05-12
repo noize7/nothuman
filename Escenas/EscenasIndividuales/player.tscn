@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cysc5kttpr2ci" path="res://Assets/Texturas/TextureSettingsMenu2.png" id="7_5uqy4"]
 [ext_resource type="AudioStream" uid="uid://pb0ufkgo67c" path="res://Assets/Sonidos/walksound1_2.mp3" id="11_rg145"]
 [ext_resource type="Shader" uid="uid://mwdasm1fw55q" path="res://Shaders/bordes_aim.gdshader" id="11_vhjfi"]
+[ext_resource type="Texture2D" uid="uid://cw4uj2kqw4iw6" path="res://Assets/Texturas/icons/flashlight_icon.png" id="12_3ye3l"]
 [ext_resource type="AudioStream" uid="uid://nb5w2frde0oy" path="res://Assets/Sonidos/walksound2.mp3" id="12_mf80y"]
 [ext_resource type="AudioStream" uid="uid://ctg7xk11l5m5l" path="res://Assets/Sonidos/walksound3.mp3" id="13_bnog6"]
 
@@ -62,7 +63,7 @@ volume_db = 9.701
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005865276, 0.7228222, -0.21770391)
 
 [node name="Linterna" parent="Camera3D" unique_id=1240722614 instance=ExtResource("4_rg145")]
-transform = Transform3D(0.20956734, 0, -0.9777942, 0, 1, 0, 0.9777942, 0, 0.20956734, 0.36695042, -0.2534197, -0.4049076)
+transform = Transform3D(0.10952616, 0, -0.99398386, 0, 1, 0, 0.99398386, 0, 0.10952616, 0.36695042, -0.2534197, -0.4049076)
 
 [node name="RayCast" type="RayCast3D" parent="Camera3D" unique_id=1261637537]
 target_position = Vector3(0, 0, -3)
@@ -291,6 +292,17 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ank8x")
 text = "save"
 
 [node name="Canvas" type="CanvasLayer" parent="." unique_id=1175005662]
+
+[node name="FlashlightIcon" type="TextureRect" parent="Canvas" unique_id=1269702620]
+visible = false
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.040625
+anchor_top = 0.04047619
+anchor_right = 0.103125
+anchor_bottom = 0.13571429
+texture = ExtResource("12_3ye3l")
+metadata/_edit_use_anchors_ = true
 
 [node name="Shader" type="ColorRect" parent="Canvas" unique_id=831500000]
 material = SubResource("ShaderMaterial_58h11")
